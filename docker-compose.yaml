@@ -1,0 +1,7 @@
+version: "3"
+services:
+  helloworld:
+    build: .
+    image: helloworld:latest
+    ports:
+      - 8080:8080
