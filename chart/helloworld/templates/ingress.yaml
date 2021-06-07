@@ -1,6 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "helloworld.fullname" . -}}
 apiVersion: extensions/v1beta1
+# TODO: Upgrade to networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
