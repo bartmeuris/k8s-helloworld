@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: docker.pkg.github.com/bartmeuris/k8s-helloworld/helloworld
+  repository: ghcr.io/bartmeuris/k8s-helloworld/helloworld:latest
   tag: ""
   pullPolicy: Always
 
