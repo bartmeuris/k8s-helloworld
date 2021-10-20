@@ -17,8 +17,10 @@ var head = `
 var body = `
 	<h1>Hello world!</h1>
 	From '%s%s' on '%s'
+	<pre>
 `
 var foot = `
+	</pre>
 </body>
 </html>
 `
