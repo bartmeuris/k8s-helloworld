@@ -50,3 +50,16 @@ tolerations: []
 affinity: {}
 
 labels: {}
+
+podAnnotations: {}
+
+annotations: {}
+
+topologySpreadConstraints: []
+# - maxSkew: 1
+#   topologyKey: sandboxzone
+#   # whenUnsatisfiable: DoNotSchedule
+#   whenUnsatisfiable: ScheduleAnyway
+#   labelSelector:
+#     matchLabels:
+#       app.kubernetes.io/instance: "{{ .Release.Name }}"

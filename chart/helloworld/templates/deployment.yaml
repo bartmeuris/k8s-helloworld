@@ -4,6 +4,10 @@ metadata:
   name: {{ include "helloworld.fullname" . }}
   labels:
     {{- include "helloworld.labels" . | nindent 4 }}
+    {{- with .Values.annotations }}
+    annotations:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -14,6 +18,10 @@ spec:
     metadata:
       labels:
         {{- include "helloworld.labels" . | nindent 8 }}
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -48,4 +56,8 @@ spec:
     {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.topologySpreadConstraints }}
+      topologySpreadConstraints:
+        {{- tpl ( toYaml . ) $ | nindent 8 }}
     {{- end }}
